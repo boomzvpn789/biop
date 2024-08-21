@@ -1,128 +1,68 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ข้อมูลการใช้งาน เซิฟเวอร์</title>
+    <title>Create Domain DNS</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1f4037, #99f2c8);
-            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
             padding: 20px;
-            color: #fff;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
         }
         h2 {
             text-align: center;
-            color: #ffeb3b;
-            font-size: 36px;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            color: #333;
         }
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background-color: rgba(0, 0, 0, 0.8);
-            border-radius: 15px;
-            padding: 20px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
-            animation: fadeIn 2s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        table {
+        input, select, button {
             width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
         }
-        th, td {
-            padding: 15px;
-            text-align: center;
-            border-bottom: 1px solid #444;
-        }
-        th {
-            background-color: #333;
-            font-weight: bold;
-            text-transform: uppercase;
-            color: #ffeb3b;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-        }
-        tr:nth-child(even) {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-        tr:hover {
-            background-color: rgba(255, 255, 255, 0.2);
-            transition: background-color 0.3s ease;
-        }
-        .highlight-green {
-            color: #2ecc71;
-            font-weight: bold;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
-        }
-        p {
-            text-align: right;
-            font-size: 18px;
-            margin-top: 10px;
-            color: #ffeb3b;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-        }
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 14px;
-            color: #bbb;
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h2>เซิฟเวอร์คน ออนไลน์ </h2>
+    <h2>เว็บแปล DNS FREE</h2>
+    <form id="dnsForm">
+        <label for="domainName">ใส่ชื่อโดเมน</label>
+        <input type="text" id="domainName" name="domainName" placeholder="Domain Name" required>
 
-    <table>
-        <tr>
-            <th>เซิฟ</th>
-            <th>สถานะ</th>
-            <th>จำนวน</th>
-            <th>ใช้</th>
-        </tr>
-        <tr>
-            <td>TH1</td>
-            <td class="highlight-green">ว่างใช้งาน 70 คน</td>
-            <td>74</td>
-            <td>200</td>
-        </tr>
-        <tr>
-            <td>TH2</td>
-            <td class="highlight-green">ว่างใช้งาน 77 คน</td>
-            <td>73</td>
-            <td>200</td>
-        </tr>
-        <tr>
-            <td>TH3</td>
-            <td class="highlight-green">ว่างใช้งาน 87 คน</td>
-            <td>63</td>
-            <td>200</td>
-        </tr>
-        <tr>
-            <td>TH4</td>
-            <td class="highlight-green">ว่างใช้งาน 68 คน</td>
-            <td>82</td>
-            <td>200</td>
-        </tr>
-        <tr>
-            <td>TH5</td>
-            <td class="highlight-green">ว่างใช้งาน 63 คน</td>
-            <td>87</td>
-            <td>200</td>
-        </tr>
-        </tr>
+        <label for="ipAddress">ใส่ไอพี</label>
+        <input type="text" id="ipAddress" name="ipAddress" placeholder="IP Address" required>
+
+        <label for="chooseDomain">Choose Domain</label>
+        <select id="chooseDomain" name="chooseDomain" required>
+            <option value="ekrom.my.id"> ekrom.my.id </option>
+            <option value="boomzvpn.net"> boomzvpn.net </option>
+        </select>
+
+        <button type="submit">แปลไอพี โดเมน</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('dnsForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        alert('Domain DNS Created Successfully!');
+    });
+</script>
+
+</body>
+</html>
