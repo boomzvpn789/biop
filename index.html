@@ -4,105 +4,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Domain DNS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-            padding: 20px;
-        }
-        .container {
-            max-width: 400px;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-        h2 {
-            text-align: center;
-            color: #333;
-        }
-        input, select, button {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-        button {
-            background-color: #4CAF50;
+            background: linear-gradient(135deg, #1d2671 0%, #c33764 100%);
             color: white;
+            padding: 40px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .card {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 50px;
+            padding: 20px;
+        }
+
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .glow-on-hover {
+            width: 100%;
+            height: 50px;
+            border: none;
+            outline: none;
+            color: #fff;
+            background: #111;
             cursor: pointer;
+            position: relative;
+            z-index: 0;
+            border-radius: 10px;
+        }
+
+        .glow-on-hover:before {
+            content: '';
+            background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00f5, #ff0000);
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 400%;
+            z-index: -1;
+            filter: blur(5px);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            animation: glowing 20s linear infinite;
+            border-radius: 10px;
+        }
+
+        @keyframes glowing {
+            0% { background-position: 0 0; }
+            50% { background-position: 400% 0; }
+            100% { background-position: 0 0; }
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h2>เว็บแปล DNS FREE</h2>
-    <form id="dnsForm">
-        <label for="domainName">ใส่ชื่อโดเมน</label>
-        <input type="text" id="domainName" name="domainName" placeholder="Domain Name" required>
-
-        <label for="ipAddress">ใส่ไอพี</label>
-        <input type="text" id="ipAddress" name="ipAddress" placeholder="IP Address" required>
-
-        <label for="chooseDomain">Choose Domain</label>
-        <select id="chooseDomain" name="chooseDomain" required>
-            <option value="ekrom.my.id"> ekrom.my.id </option>
-            <option value="boomzvpn.net"> boomzvpn.net </option>
-        </select>
-
-        <button type="submit">แปลไอพี โดเมน</button></br>
-        <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centered Content</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #f0f0f0; /* สีพื้นหลัง */
-            font-family: Arial, sans-serif;
-        }
-        .centered-box {
-            border: 2px solid #ff6347; /* กรอบสีแดงอมส้ม */
-            padding: 30px;
-            background-color: #fff; /* สีพื้นหลังของกล่อง */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* เงากล่อง */
-            border-radius: 10px; /* มุมกลม */
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-
-<div class="centered-box">
-    <h1>เว็บจัดทำโดย@เจฟ.เจฟ</h1>
-    <p>นี่คือเนื้อหาที่อยู่ตรงกลางหน้าจอ</p>
-</div>
-
-</body>
-</html>
-    
-</div>
-
-        
-    </form>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card" data-aos="fade-up">
+                <div class="card-header text-center">
+                    <h2>Create Domain DNS</h2>
+                </div>
+                <div class="card-body">
+                    <form id="dnsForm">
+                        <div class="form-group">
+                            <label for="domainName">Domain Name</label>
+                            <input type="text" class="form-control" id="domainName" name="domainName" placeholder="Enter Domain Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ipAddress">IP Address</label>
+                            <input type="text" class="form-control" id="ipAddress" name="ipAddress" placeholder="Enter IP Address" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="chooseDomain">Choose Domain</label>
+                            <select class="form-control" id="chooseDomain" name="chooseDomain" required>
+                                <option value="example.com">example.com</option>
+                                <option value="example.net">example.net</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="glow-on-hover btn-block">Create Domain DNS</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script>
-    document.getElementById('dnsForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        alert('Domain DNS Created Successfully!');
-    });
-</script>
-
-</body>
-</html>
+    gsap.from(".card", {duration: 1, y: 50, opacity
