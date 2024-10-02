@@ -1,104 +1,149 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>แปล DNS FREE</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <title>Contact Admin Example with Spacing</title>
     <style>
         body {
-            background: linear-gradient(135deg, #1d2671 0%, #c33764 100%);
-            color: white;
-            padding: 40px;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .card {
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            margin-top: 50px;
+            font-family: 'Arial', sans-serif;
             padding: 20px;
+            text-align: center;
+            background-color: #f0f4f8;
+            color: #333;
         }
 
         h2 {
-            font-family: 'Poppins', sans-serif;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+            color: #3498db;
+            margin-bottom: 20px;
+            font-size: 2em;
         }
 
-        .glow-on-hover {
+        .container {
+            border: 2px solid #3498db;
+            padding: 20px;
             width: 100%;
-            height: 50px;
-            border: none;
-            outline: none;
-            color: #fff;
-            background: #111;
+            max-width: 90vw;
+            box-sizing: border-box;
+            margin: 20px auto;
+            font-size: 20px;
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .free-text {
+            margin: 0; /* ไม่มีระยะห่างด้านบนและด้านล่าง */
+            padding: 0; /* ไม่มีระยะห่างภายใน */
+            font-size: 24px; /* ขนาดฟอนต์ */
+            text-align: center; /* จัดกลางข้อความ */
+        }
+
+        .contact-admin-button {
+            margin-top: 30px;
+            padding: 15px 30px;
+            font-size: 18px;
             cursor: pointer;
-            position: relative;
-            z-index: 0;
-            border-radius: 10px;
+            border: none;
+            background-color: #3498db;
+            color: white;
+            border-radius: 25px;
+            transition: background-color 0.3s ease;
         }
 
-        .glow-on-hover:before {
-            content: '';
-            background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00f5, #ff0000);
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            background-size: 400%;
-            z-index: -1;
-            filter: blur(5px);
-            width: calc(100% + 4px);
-            height: calc(100% + 4px);
-            animation: glowing 20s linear infinite;
-            border-radius: 10px;
+        .contact-admin-button:hover {
+            background-color: #2980b9;
         }
 
-        @keyframes glowing {
-            0% { background-position: 0 0; }
-            50% { background-position: 400% 0; }
-            100% { background-position: 0 0; }
+        .visitor-count-container {
+            border: 2px solid #27ae60;
+            padding: 15px;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            background-color: #ffffff;
+            font-size: 24px;
+            color: #27ae60;
+        }
+
+        .extra-box-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .extra-box {
+            border: 2px solid #e67e22;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #f7e1d7;
+            font-size: 16px;
+            color: #e67e22;
+            width: 45%;
+            margin: 0 10px;
+        }
+
+        button.copy-button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: 2px solid #3498db;
+            background-color: #3498db;
+            color: white;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        button.copy-button:hover {
+            background-color: #2980b9;
         }
     </style>
 </head>
 <body>
 
+<img src="https://img2.pic.in.th/pic/fun-in-blossom-anime-girl.jpg" alt="Anime Girl" width="342" height="180">
+
+
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-6">
-            <div class="card" data-aos="fade-up">
-                <div class="card-header text-center">
-                    <h2>เว็บแปล โดเมน ฟรี</h2>
-                </div>
-                <div class="card-body">
-                    <form id="dnsForm">
-                        <div class="form-group">
-                            <label for="domainName">ใส่ชื่อโดเมน</label>
-                            <input type="text" class="form-control" id="domainName" name="domainName" placeholder="Enter Domain Name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="ipAddress">ใส่ไอพีโดเมน</label>
-                            <input type="text" class="form-control" id="ipAddress" name="ipAddress" placeholder="Enter IP Address" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="chooseDomain">เลือกโดเมน</label>
-                            <select class="form-control" id="chooseDomain" name="chooseDomain" required>
-                                <option value="example.com">boomzvpn.com</option>
-                                <option value="example.net">boomzvpn.my.id</option>
-                                <option value="example.net">boomzvpn.cloud</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="glow-on-hover btn-block">กดแปลโดเมน</button>
-                    </form>
-                </div>
-            </div>
+    <p class="free-text">แจกฟรี V2BOX 7 วัน ห้ามขาย </p>
+
+    <div class="extra-box-container">
+        <div class="extra-box">
+            <p>TRUE NOPRO</p>
+            <button class="copy-button" onclick="copyText('TRUE NOPRO')">คัดลอก</button>
+        </div>
+        <div class="extra-box">
+            <p>AIS PLAY 64K</p>
+            <button class="copy-button" onclick="copyText('vless://idcboomzvpnais1@the1.idc.boomzvpn.cloud:80?security=none&encryption=none&type=tcp&host=www.speedtest.net&path=/&headerType=http#AIS-PLAY-TH-AIS1')">คัดลอก</button>
         </div>
     </div>
-</div>
 
-<script>
-    gsap.from(".card", {duration: 1, y: 50, opacity
+    
+<div class="visitor-count-container">
+        <div id="visitorCount">วันหมดอายุไฟล์ 07/10/67</div>
+    </div>
+
+    <button class="contact-admin-button" onclick="contactAdmin()">ติดต่อแอดมิน</button>
+
+    <script>
+        
+
+        function contactAdmin() {
+            alert("กรุณาติดต่อแอดมินที่ email@example.com");
+        }
+
+        function copyText(text) {
+            var textarea = document.createElement("textarea");
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand("copy");
+            document.body.removeChild(textarea);
+            alert("คัดลอกข้อความ: " + text);
+        }
+    </script>
+
+</body>
+</html>
